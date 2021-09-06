@@ -63,8 +63,7 @@ export default class TransactionScreen extends React.Component {
     db.collection("transactions").add({
       studentId: this.state.scannedStudentId,
       bookId: this.state.scannedBookId,
-      date: firebase.firestore.Timestamp.fromDate(new Date()),
-      //date: firebase.firestore.Timestamp.now().toDate(),
+      date: firebase.firestore.Timestamp.now().toDate(),
       transactionType: "Issue"
     });
     //change book status
@@ -91,7 +90,7 @@ export default class TransactionScreen extends React.Component {
     db.collection("transactions").add({
       studentId: this.state.scannedStudentId,
       bookId: this.state.scannedBookId,
-      date: firebase.firestore.Timestamp.fromDate(new Date()),
+      date: firebase.firestore.Timestamp.now().toDate(),
       transactionType: "Return"
     });
     //change book status
